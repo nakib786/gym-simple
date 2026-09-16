@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="ltr">
 
 <head>
     <meta charset="utf-8">
@@ -48,9 +48,9 @@
 
         :root {
             --ink: #0b1220;
-            --darkgreen: #021f1e;
-            --green: #10b981;
-            --green-2: #0ea371;
+            --darkgreen: #16281F;
+            --green: #57A57C;
+            --green-2: #227249;
             --table-x: 8px;
 
             --text: #111827;
@@ -115,9 +115,9 @@
         }
 
         .badge-paid {
-            background: rgba(16, 185, 129, 0.18);
-            color: #34d399;
-            border-color: rgba(52, 211, 153, 0.35);
+            background: rgba(47, 143, 91, 0.18);
+            color: #A9D3BB;
+            border-color: rgba(124, 187, 153, 0.35);
         }
 
         .badge-overdue {
@@ -253,8 +253,8 @@
 
         .callout {
             margin-top: 18px;
-            border-left: 4px solid rgba(16, 185, 129, 0.45);
-            background: rgba(16, 185, 129, 0.08);
+            border-left: 4px solid rgba(47, 143, 91, 0.45);
+            background: rgba(47, 143, 91, 0.08);
             padding: 14px 16px;
             border-radius: 4px;
         }
@@ -275,8 +275,8 @@
         }
 
         .footer {
-            background: #064e3b;
-            color: #d1fae5;
+            background: #16281F;
+            color: #EAF3ED;
             text-align: center;
             padding: 16px 18px;
             font-size: 10.5px;

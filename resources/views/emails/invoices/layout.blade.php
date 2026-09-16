@@ -9,7 +9,7 @@
         <td align="center">
             <table role="presentation" width="640" cellpadding="0" cellspacing="0" style="background: #ffffff; border: 1px solid #e5e7eb;">
                 <tr>
-                    <td style="padding: 20px 22px; background: #0b152d; color: #ffffff;">
+                    <td style="padding: 20px 22px; background: #16281F; color: #ffffff;">
                         <div style="font-size: 18px; font-weight: 700; line-height: 1.2;">{{ $gymName }}</div>
                         <div style="font-size: 12px; color: #cbd5e1; margin-top: 6px;">
                             @if (filled($gymEmail))

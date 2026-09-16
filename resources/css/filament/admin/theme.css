@@ -4,6 +4,134 @@
 @source '../../../../app/Filament/**/*';
 @source '../../../../resources/views/filament/**/*';
 
+/* ---- Design tokens ---- */
+:root {
+    --gymie-card-radius: 0.75rem;   /* matches Filament's stock rounded-xl; single source of truth for every "card" surface below */
+    --gymie-accent-bar: 3px;
+}
+
+/* ---- Cards: border-led, not shadow-led (sections, tables, stat cards, login card) ---- */
+.fi-section:not(.fi-aside),
+.fi-section.fi-aside > .fi-section-content-ctn,
+.fi-ta-ctn,
+.fi-wi-stats-overview-stat,
+.fi-simple-main {
+    border-radius: var(--gymie-card-radius);
+    box-shadow: none;
+}
+
+/* ---- Dark mode: pine-tinted surfaces instead of Filament's stock neutral dark gray ----
+   .fi-body is the page background; .fi-sidebar is transparent on desktop (shows .fi-body
+   through it) but solid on mobile/drawer, so it still needs its own override for that case. */
+@variant dark {
+    .fi-body {
+        background-color: var(--primary-950);
+    }
+    .fi-topbar,
+    .fi-sidebar,
+    .fi-section:not(.fi-aside),
+    .fi-section.fi-aside > .fi-section-content-ctn,
+    .fi-ta-ctn,
+    .fi-wi-stats-overview-stat,
+    .fi-simple-main {
+        background-color: var(--primary-900);
+    }
+}
+
+/* ---- Topbar & sidebar: hairline border instead of shadow+ring ---- */
+.fi-topbar {
+    box-shadow: none;
+    border-bottom: 1px solid var(--gray-200);
+}
+.fi-body-has-topbar .fi-sidebar-header {
+    box-shadow: none;
+}
+.fi-sidebar {
+    border-inline-end: 1px solid var(--gray-200);
+}
+@variant dark {
+    .fi-topbar,
+    .fi-sidebar {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* ---- Sidebar active-item: restrained left accent bar ---- */
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+    position: relative;
+}
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn::before {
+    content: '';
+    position: absolute;
+    inset-block: 0.375rem;
+    inset-inline-start: 0;
+    width: 3px;
+    border-radius: 999px;
+    background: var(--primary-600);
+}
+@variant dark {
+    .fi-sidebar-item.fi-active > .fi-sidebar-item-btn::before {
+        background: var(--primary-400);
+    }
+}
+
+/* ---- Stat cards: accent bar + de-emphasized icon + numeral hierarchy ---- */
+.fi-wi-stats-overview-stat {
+    position: relative;
+    overflow: hidden;
+}
+.fi-wi-stats-overview-stat::before {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: var(--gymie-accent-bar);
+    background: var(--primary-500);
+}
+@variant dark {
+    .fi-wi-stats-overview-stat::before {
+        background: var(--primary-400);
+    }
+}
+/* Replaces (not deletes) the old icon-color override -- the widget PHP injects a dormant
+   primary-400 utility class via extraAttributes() that only stays inert because this
+   unlayered rule wins the cascade; deleting it would reveal that class instead of falling
+   back to stock gray. */
 .fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-label-ctn > .fi-icon {
-    color: var(--primary-500);
+    color: var(--gray-400);
+}
+@variant dark {
+    .fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-label-ctn > .fi-icon {
+        color: var(--gray-500);
+    }
+}
+.fi-wi-stats-overview-stat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+.fi-wi-stats-overview-stat-value {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    font-weight: 800;
+}
+
+/* ---- Login / password-reset card: same accent-bar signature, no decorative gradient ---- */
+.fi-simple-main {
+    position: relative;
+    overflow: hidden;
+}
+.fi-simple-main::before {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: var(--gymie-accent-bar);
+    background: var(--primary-500);
+}
+@variant dark {
+    .fi-simple-main::before {
+        background: var(--primary-400);
+    }
 }

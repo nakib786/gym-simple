@@ -30,8 +30,8 @@
     </table>
 
     @if (filled($note))
-        <div style="margin-top: 14px; padding: 12px 14px; border: 1px solid #d1fae5; background: #ecfdf5;">
-            <div style="font-size: 11px; letter-spacing: 1px; font-weight: 700; color: #065f46; text-transform: uppercase;">{{ __('app.fields.note') }}</div>
+        <div style="margin-top: 14px; padding: 12px 14px; border: 1px solid #DEEEE6; background: #EEF6F2;">
+            <div style="font-size: 11px; letter-spacing: 1px; font-weight: 700; color: #1B5B3A; text-transform: uppercase;">{{ __('app.fields.note') }}</div>
             <div style="margin-top: 6px; font-size: 13px; color: #111827; line-height: 1.4;">
                 {{ $note }}
             </div>
