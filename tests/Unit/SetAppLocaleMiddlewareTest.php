@@ -12,7 +12,7 @@ test('it syncs Carbon locale with app locale', function () {
     try {
         config()->set('app.locale', 'en');
         config()->set('app.fallback_locale', 'en');
-        config()->set('app.supported_locales', ['en', 'fr', 'ar']);
+        config()->set('app.supported_locales', ['en', 'fr']);
 
         app()->bind(SettingsRepository::class, fn (): SettingsRepository => new class implements SettingsRepository
         {

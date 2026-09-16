@@ -29,14 +29,12 @@ return [
 	*/
 
 	'accepted_locales' => [
-		'ar',
         'az',
 		'bn',
 		'br',
 		'de',
 		'en',
 		'es',
-		'fa',
 		'fr',
 		'hr',
 		'it',

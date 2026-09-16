@@ -312,8 +312,6 @@ return [
     'locales' => [
         'en' => 'Anglais',
         'fr' => 'Français',
-        'ar' => 'Arabe',
-        'fa' => 'Farsi',
     ],
     'settings' => [
         'title' => 'Paramètres',

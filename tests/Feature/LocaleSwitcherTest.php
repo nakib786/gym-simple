@@ -5,7 +5,7 @@ use App\Filament\Livewire\LocaleSwitcher;
 use Livewire\Livewire;
 
 it('persists the selected locale in settings', function (): void {
-    config()->set('app.supported_locales', ['en', 'fr', 'ar']);
+    config()->set('app.supported_locales', ['en', 'fr']);
 
     $repository = new class implements SettingsRepository
     {
@@ -51,7 +51,7 @@ it('persists the selected locale in settings', function (): void {
 });
 
 it('ignores unsupported locales', function (): void {
-    config()->set('app.supported_locales', ['en', 'fr', 'ar']);
+    config()->set('app.supported_locales', ['en', 'fr']);
 
     $repository = new class implements SettingsRepository
     {
@@ -92,7 +92,7 @@ it('ignores unsupported locales', function (): void {
 });
 
 it('renders the current locale label in the trigger', function (): void {
-    config()->set('app.supported_locales', ['en', 'fr', 'ar']);
+    config()->set('app.supported_locales', ['en', 'fr']);
 
     app()->setLocale('en');
 

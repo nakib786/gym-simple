@@ -27,8 +27,4 @@ it('localizes API error messages via the locale query parameter', function (): v
     $this->getJson('/api/v1/plans?sort=unknown&locale=fr')
         ->assertStatus(400)
         ->assertJsonPath('message', 'Paramètres de requête invalides.');
-
-    $this->getJson('/api/v1/plans?sort=unknown&locale=ar')
-        ->assertStatus(400)
-        ->assertJsonPath('message', 'معلمات الاستعلام غير صالحة.');
 });

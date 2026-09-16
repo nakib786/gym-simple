@@ -17,8 +17,6 @@ class LocaleSwitcher extends Component
     private const LOCALE_FLAGS = [
         'en' => '🇺🇸',
         'fr' => '🇫🇷',
-        'ar' => '🇸🇦',
-        'fa' => '🇮🇷',
     ];
 
     public function mount(): void

@@ -36,17 +36,4 @@ it('localizes Filament resource labels', function (string $locale, array $expect
         'net_revenue' => 'Revenu net',
         'cannot_delete_invoice' => 'Suppression impossible Invoice',
     ]],
-    'ar' => ['ar', [
-        'panel_direction' => 'ltr',
-        'plan_singular' => 'خطة',
-        'plan_plural' => 'الخطط',
-        'service_singular' => 'خدمة',
-        'service_plural' => 'الخدمات',
-        'user_singular' => 'مستخدم',
-        'user_plural' => 'المستخدمون',
-        'edit_plan' => 'تعديل خطة',
-        'invoice_title' => 'فاتورة رقم INV-1',
-        'net_revenue' => 'صافي الايراد',
-        'cannot_delete_invoice' => 'لا يمكن حذف Invoice',
-    ]],
 ]);
